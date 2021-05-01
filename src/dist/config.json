@@ -1,0 +1,20 @@
+{
+    "json": "C:/Users/benny/Documents/Codes/JavaScript/Nodejs/MI-Converter/src/data/ModuleInfo.json",
+    "execel": {
+        "path": "C:/Users/benny/Documents/Codes/JavaScript/Nodejs/MI-Converter/src/data/MOE.xlsx",
+        "sheets": [
+            "筆硯機關共用範本"
+        ]
+    },
+    "templateTypeItems": [
+        { "value": "0", "name": "一般表單", "defaultTemplate": 0 },
+        { "value": "1", "name": "秘書處", "defaultTemplate": 0 },
+        { "value": "2", "name": "國際司", "defaultTemplate": 0 },
+        { "value": "3", "name": "人事表單", "defaultTemplate": 0 },
+        { "value": "4", "name": "訴願表單", "defaultTemplate": 0 },
+        { "value": "5", "name": "政風處", "defaultTemplate": 0 },
+        { "value": "6", "name": "獎基會", "defaultTemplate": 0 },
+        { "value": "7", "name": "行政院公報表單", "defaultTemplate": 0 }
+    ],
+    "output": "MI.json"
+}

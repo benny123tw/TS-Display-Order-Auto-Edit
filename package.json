@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "description": "easy edit moduleinfo.json display order using xlsx and json converter",
+  "devDependencies": {
+    "@types/node": "^15.0.1"
+  },
+  "dependencies": {
+    "xlsx": "^0.16.9"
+  },
+  "scripts": {
+    "start": "node ./src/dist/index.js"
+  },
+  "author": "Benny Yen",
+  "license": "MIT"
+}
