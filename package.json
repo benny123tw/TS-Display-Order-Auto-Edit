@@ -8,8 +8,10 @@
     "xlsx": "^0.16.9"
   },
   "scripts": {
-    "start": "node ./src/dist/index.js"
+    "build": "tsc",
+    "start": "npm run build && node dist/index.js"
   },
   "author": "Benny Yen",
-  "license": "MIT"
+  "license": "MIT",
+  "bin": "src/dist/index.js"
 }

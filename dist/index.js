@@ -20,10 +20,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs = __importStar(require("fs"));
+const path = __importStar(require("path"));
 const ExecelService_1 = require("./service/ExecelService");
 const TemplateService_1 = require("./service/TemplateService");
 const Sorter_1 = require("./utils/Sorter");
-const config = JSON.parse(fs.readFileSync(__dirname + '/config.json', 'utf8'));
+const config = JSON.parse(fs.readFileSync(path.join(process.cwd(), '/config.json'), 'utf8'));
 const execelService = new ExecelService_1.ExecelService(config);
 const templateService = new TemplateService_1.TemplateService(config);
 const rules = execelService.readFileSync();
