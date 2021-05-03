@@ -13,5 +13,5 @@
   },
   "author": "Benny Yen",
   "license": "MIT",
-  "bin": "src/dist/index.js"
+  "bin": "dist/index.js"
 }
