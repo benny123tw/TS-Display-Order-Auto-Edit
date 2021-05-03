@@ -17,11 +17,18 @@ export class ExecelService extends Service {
         if (!path) throw new Error("Invalid path");
 
         const file: xlsx.WorkBook = xlsx.readFile(path);
-        const sheetName: string = this.execel.sheets[0] || file.SheetNames[0];
-        const sheet: xlsx.WorkSheet = file.Sheets[sheetName];
-        const data: any[] = xlsx.utils.sheet_to_json(sheet);
+        let sheetNameArr: string[] =
+            this.execel.sheets.length ?
+                this.execel.sheets : [file.SheetNames[0]];
 
-        return this.addTemplateType(data);
+        let result: any[] = [];
+        for (let sheetName of sheetNameArr) {
+            const sheet: xlsx.WorkSheet = file.Sheets[sheetName];
+            const data: any[] = xlsx.utils.sheet_to_json(sheet);
+            result.concat(data);
+        }
+
+        return this.addTemplateType(result);
     }
 
     /**

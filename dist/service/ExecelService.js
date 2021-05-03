@@ -35,10 +35,15 @@ class ExecelService extends Service_1.Service {
         if (!path)
             throw new Error("Invalid path");
         const file = xlsx.readFile(path);
-        const sheetName = this.execel.sheets[0] || file.SheetNames[0];
-        const sheet = file.Sheets[sheetName];
-        const data = xlsx.utils.sheet_to_json(sheet);
-        return this.addTemplateType(data);
+        let sheetNameArr = this.execel.sheets.length ?
+            this.execel.sheets : [file.SheetNames[0]];
+        let result = [];
+        for (let sheetName of sheetNameArr) {
+            const sheet = file.Sheets[sheetName];
+            const data = xlsx.utils.sheet_to_json(sheet);
+            result.concat(data);
+        }
+        return this.addTemplateType(result);
     }
     /**
      * Return new `Rule` array of demand
