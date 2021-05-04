@@ -25,7 +25,7 @@ export class ExecelService extends Service {
         for (let sheetName of sheetNameArr) {
             const sheet: xlsx.WorkSheet = file.Sheets[sheetName];
             const data: any[] = xlsx.utils.sheet_to_json(sheet);
-            result.concat(data);
+            result = result.concat(data);
         }
 
         return this.addTemplateType(result);

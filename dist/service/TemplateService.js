@@ -34,7 +34,7 @@ class TemplateService extends Service_1.Service {
     readFileSync(path = this.json, options) {
         if (!path)
             throw new Error("Invalid path");
-        const file = JSON.parse(fs.readFileSync(path, { encoding: "utf-8" }));
+        const file = JSON.parse(fs.readFileSync(path, { encoding: "utf-8" }).replace(/^\uFEFF/, ''));
         this.getDocType(file);
         return file;
     }

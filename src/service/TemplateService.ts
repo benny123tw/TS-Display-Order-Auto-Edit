@@ -18,7 +18,7 @@ export class TemplateService extends Service {
 
         if (!path) throw new Error("Invalid path");
 
-        const file:ModuleInfo = JSON.parse(fs.readFileSync(path, { encoding: "utf-8" }));
+        const file:ModuleInfo = JSON.parse(fs.readFileSync(path, { encoding: "utf-8" }).replace(/^\uFEFF/, ''));
 
         this.getDocType(file);
 
